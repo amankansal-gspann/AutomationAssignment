@@ -36,15 +36,8 @@ test('End-to-End Registration Flow with Validation and File Upload', async ({ pa
   await expect(registerPage.password).toHaveValue(userData.password);
   await expect(registerPage.confirmPassword).toHaveValue(userData.password);
 
-  page.once('dialog', async dialog => {
-    console.log('Validation message:', dialog.message());
-    await expect(dialog.message()).toContain('Please select an item from list');
-    await dialog.dismiss();
-  });
-
   await registerPage.submit();
-  await expect(await registerPage.getValidationMessageForCountry())
-    .toContain('Please select an item from the list');
-
+  await expect(await registerPage.getValidationMessageForSkills())
+  .toContain('Please select an item in the list');
 
 });

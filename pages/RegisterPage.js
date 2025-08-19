@@ -40,14 +40,14 @@ class RegisterPage {
   async uploadFile(filePath) {
     await this.uploadInput.setInputFiles(filePath);
   }
-
-  async getValidationMessageForCountry() {
-  return await this.countryDropdown.evaluate(el => el.validationMessage);
-}
+  
+  async getValidationMessageForSkills() {
+  return await this.skillsDropdown.evaluate(el => el.validationMessage);
+  }
 
   async submit() {
   await this.submitBtn.press('Enter');
-}
+  }
 
 }
 
