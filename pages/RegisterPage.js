@@ -46,8 +46,8 @@ class RegisterPage {
 }
 
   async submit() {
-    await this.submitBtn.click();
-  }
+  await this.submitBtn.press('Enter');
+}
 
 }
 

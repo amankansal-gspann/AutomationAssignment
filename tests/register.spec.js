@@ -43,6 +43,8 @@ test('End-to-End Registration Flow with Validation and File Upload', async ({ pa
   });
 
   await registerPage.submit();
-  await expect(await registerPage.getValidationMessageForCountry()).toContain('Please select an item from list');
-  
+  await expect(await registerPage.getValidationMessageForCountry())
+    .toContain('Please select an item from the list');
+
+
 });
